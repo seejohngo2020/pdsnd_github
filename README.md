@@ -1,15 +1,25 @@
 ### Date created
-Include the date you created this project and README file.
+10/26/2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Data Statistical Analysis
 
 ### Description
-Describe what your project is about and what it does
+Bicycle sharing has become globally more popular in the recent years. Customers can rent a bike for a few hours or more. They can then return the bike to the same place they picked it up from or return it to a different place.
+
+This project explores bikeshare data provided by [Motivate](https://www.motivateco.com/) which is a bikeshare system provider.
+
+Three areas of interest are explored in this project:
+* The popular times of travel
+* Trip duration
+* User information
 
 ### Files used
-Include the files used
+The files for this project are as follows.
+* Explore_bikeshare_data.r
+* chicago.csv
+* new-york-city.csv
+* washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+The dataset for this project was provided by [Motivate](https://www.motivateco.com/). The online workspace was provided by [Udacity](https://www.udacity.com/). Documentation references were provided by [GitHub]( https://docs.github.com).
