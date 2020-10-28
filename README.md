@@ -15,7 +15,7 @@ This project explores bikeshare data provided by [Motivate](https://www.motivate
 * Here the most common month, day of week and hour of day are analyzed
 
 ###### Trip duration
-
+* Here the total travel time for different cities and the average travel time for different cities are analyzed.
 ###### User information
 
 
