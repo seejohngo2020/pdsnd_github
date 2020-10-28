@@ -143,7 +143,7 @@ counts.df <- setNames(data.frame(matrix(ncol=3,nrow = 0)), c("Category","UserCou
 #         dataset with the desired city data
 #         city name
 # Output: data frame with the user type categories, count of each category and city 
-getCustomerAndSubcriberCounts <- function(output.df,input.df, myCity){
+getCustomerAndSubcriberCounts <- function(output.df,input.df, cityName){
   customerCount <- 0
   subscriberCount <- 0
   for( i in 1:nrow(input.df)){
@@ -154,8 +154,8 @@ getCustomerAndSubcriberCounts <- function(output.df,input.df, myCity){
     }
   }
 
-  output.df[nrow(output.df)+1,] <- c("Customer", as.numeric(customerCount), myCity)
-  output.df[nrow(output.df)+1,] <- c("Subscriber", as.numeric(subscriberCount), myCity)
+  output.df[nrow(output.df)+1,] <- c("Customer", as.numeric(customerCount), cityName)
+  output.df[nrow(output.df)+1,] <- c("Subscriber", as.numeric(subscriberCount), cityName)
 
   return (output.df)
 }
