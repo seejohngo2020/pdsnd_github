@@ -9,10 +9,15 @@ Bicycle sharing has become globally more popular in the recent years. Customers 
 
 This project explores bikeshare data provided by [Motivate](https://www.motivateco.com/) which is a bikeshare system provider.
 
-Three areas of interest are explored in this project:
-* The popular times of travel
-* Trip duration
-* User information
+##### Three areas of interest are explored in this project.
+
+###### The popular times of travel
+* Here the most common month, day of week and hour of day are analyzed
+
+###### Trip duration
+
+###### User information
+
 
 ### Files used
 The files for this project are as follows.
