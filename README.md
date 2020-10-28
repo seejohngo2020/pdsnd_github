@@ -16,8 +16,9 @@ This project explores bikeshare data provided by [Motivate](https://www.motivate
 
 ###### Trip duration
 * Here the total travel time for different cities and the average travel time for different cities are analyzed.
-###### User information
 
+###### User information
+* Here the user types, genders and birth years are analyzed.
 
 ### Files used
 The files for this project are as follows.
