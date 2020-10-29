@@ -37,7 +37,7 @@ nydates.df <- data.frame(months, days,day.of.week,hour.of.day , 'New York')
 names(nydates.df) <- c("Month", "Day", "Dow", "Hour", "City")
 
 # combine city data into one data frame
-allCities <- rbind(chiDates.df,nydates.df)
+allCities.df <- rbind(chiDates.df,nydates.df)
 
 # Create a dataframe with Month, Day, Day of Week 
 # and Hour of Day data for Washington
@@ -50,26 +50,26 @@ washdates.df <- data.frame(months, days,day.of.week,hour.of.day , 'Washington')
 names(washdates.df) <- c("Month", "Day", "Dow", "Hour", "City")
 
 # add Washington data to the combined city data frame
-allCities <- rbind(allCities,washdates.df)
+allCities.df <- rbind(allCities,washdates.df)
 
 # prepare data for plotting
-allCities$Month <- factor(month.abb[allCities$Month],levels=month.abb)
-allCities$Dow <- factor(allCities$Dow,levels=c("Monday","Tuesday","Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))
+allCities.df$Month <- factor(month.abb[allCities$Month],levels=month.abb)
+allCities.df$Dow <- factor(allCities$Dow,levels=c("Monday","Tuesday","Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))
 
-ggplot(allCities ,aes(Month)) + geom_bar() + facet_wrap(~City) +
+ggplot(allCities.df ,aes(Month)) + geom_bar() + facet_wrap(~City) +
   ylab("Number of Trips") +
   ggtitle("Number of Trips Per Month by City") +
   theme_light() +
   theme(plot.title = element_text(hjust = 0.5))
 
-ggplot(allCities ,aes(Dow)) + geom_bar() + facet_wrap(~City) +
+ggplot(allCities.df ,aes(Dow)) + geom_bar() + facet_wrap(~City) +
   ylab("Number of Trips") +
   ggtitle("Number of Trips Per Day of Week by City") +
   theme_light() +
   theme(plot.title = element_text(hjust = 0.5)) +
   theme(axis.text.x = element_text(angle = 90))
 
-ggplot(allCities ,aes(Hour)) + geom_bar() + facet_wrap(~City) +
+ggplot(allCities.df ,aes(Hour)) + geom_bar() + facet_wrap(~City) +
     ylab("Number of Trips") +
     ggtitle("Number of Trips by Hour of the Day by City") +
     theme_light() +
@@ -143,7 +143,7 @@ counts.df <- setNames(data.frame(matrix(ncol=3,nrow = 0)), c("Category","UserCou
 #         dataset with the desired city data
 #         city name
 # Output: data frame with the user type categories, count of each category and city 
-getCustomerAndSubcriberCounts <- function(output.df,input.df, myCity){
+getCustomerAndSubcriberCounts <- function(output.df,input.df, cityName){
   customerCount <- 0
   subscriberCount <- 0
   for( i in 1:nrow(input.df)){
@@ -154,8 +154,8 @@ getCustomerAndSubcriberCounts <- function(output.df,input.df, myCity){
     }
   }
 
-  output.df[nrow(output.df)+1,] <- c("Customer", as.numeric(customerCount), myCity)
-  output.df[nrow(output.df)+1,] <- c("Subscriber", as.numeric(subscriberCount), myCity)
+  output.df[nrow(output.df)+1,] <- c("Customer", as.numeric(customerCount), cityName)
+  output.df[nrow(output.df)+1,] <- c("Subscriber", as.numeric(subscriberCount), cityName)
 
   return (output.df)
 }
